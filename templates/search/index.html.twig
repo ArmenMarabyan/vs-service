@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SearchController!{% endblock %}
+
+{% block body %}
+    <div class="container main-content p-3 mt-5">
+        <div class="row g-1 mt-1">
+            <div class="col-md-9">
+                <input placeholder="Search..." class="form-control">
+            </div>
+
+            <div class="col-md-3">
+                <button class="search btn btn-primary w-100 text-uppercase">Search</button>
+            </div>
+
+        </div>
+
+        <div class="row g-2 mt-2">
+
+            <div class="col-md-4">
+
+                <div class="card">
+                    <img src="https://i.imgur.com/Zzcgjbk.png" width="70">
+                    <h5 class="mb-0">Prismos</h5>
+                    <span class="score">5 Diamonds</span>
+                    <p>All above score is used in the games and apps</p>
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://i.imgur.com/Zzcgjbk.png" width="90">
+                    <h5 class="mb-0">Srismos</h5>
+                    <span class="score">10 Diamonds</span>
+                    <p>All above score is used in the games and apps</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="card">
+                    <img src="https://i.imgur.com/Zzcgjbk.png" width="70">
+                    <h5 class="mb-0">Trismos</h5>
+                    <span class="score">8 Diamonds</span>
+                    <p>All above score is used in the games and apps</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}

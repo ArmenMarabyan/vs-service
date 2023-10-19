@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello IndexController!{% endblock %}
+
+{% block body %}
+    <div class="container main-content p-3 mt-5">
+        <div class="row g-1 mt-1">
+            <div class="col-md-9">
+                <form method="GET" action="{{ path('app_search') }}">
+                    <div class="row">
+                        <div class="col-md-9">
+                            <input name="q" placeholder="Search..." class="form-control">
+                        </div>
+                        <div class="col-md-3">
+                            <button class="search btn btn-primary w-100 text-uppercase">Search</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+{% endblock %}
