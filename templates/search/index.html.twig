@@ -4,49 +4,37 @@
 
 {% block body %}
     <div class="container main-content p-3 mt-5">
-        <div class="row g-1 mt-1">
-            <div class="col-md-9">
-                <input placeholder="Search..." class="form-control">
-            </div>
+        {% include 'search/form.html.twig' with {term: term ?? ''}%}
 
-            <div class="col-md-3">
-                <button class="search btn btn-primary w-100 text-uppercase">Search</button>
-            </div>
-
-        </div>
-
-        <div class="row g-2 mt-2">
-
-            <div class="col-md-4">
-
-                <div class="card">
-                    <img src="https://i.imgur.com/Zzcgjbk.png" width="70">
-                    <h5 class="mb-0">Prismos</h5>
-                    <span class="score">5 Diamonds</span>
-                    <p>All above score is used in the games and apps</p>
+        <div class="cards mt-5">
+            {% for k,item in items.items %}
+                <div class="card card-{{ k }}" style="margin-bottom: 10px;">
+                    <div class="card-body">
+                        <h4 class="card-title">
+                            <a href="">{{ item.name }}</a>
+                        </h4>
+                        <h5 class="card-subtitle mb-2 text-muted">
+                            {% if item.salary %}
+                                {{ item.salary.from }} - {{ item.salary.to }} {{ item.salary.currency }}
+                            {% endif %}
+                        </h5>
+                        <p class="card-subtitle mb-2">
+                            {% if item.employer %}
+                                {{ item.employer.name }}
+                            {% endif %}
+                            <br>
+                            {% if item.area %}
+                                {{ item.area.name }}
+                            {% endif %}
+                        </p>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="card-link">Card link</a>
+                        <a href="#" class="card-link">Another link</a>
+                    </div>
                 </div>
+            {% endfor %}
 
-            </div>
 
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="https://i.imgur.com/Zzcgjbk.png" width="90">
-                    <h5 class="mb-0">Srismos</h5>
-                    <span class="score">10 Diamonds</span>
-                    <p>All above score is used in the games and apps</p>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-
-                <div class="card">
-                    <img src="https://i.imgur.com/Zzcgjbk.png" width="70">
-                    <h5 class="mb-0">Trismos</h5>
-                    <span class="score">8 Diamonds</span>
-                    <p>All above score is used in the games and apps</p>
-                </div>
-
-            </div>
 
         </div>
 
